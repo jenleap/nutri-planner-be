@@ -1,0 +1,46 @@
+### GET all meals (with meal_items, foods, and measures)
+GET http://localhost:3000/meals
+Accept: application/json
+
+###
+
+### GET a single meal
+GET http://localhost:3000/meals/1
+Accept: application/json
+
+###
+
+### CREATE a meal with nested meal_items
+POST http://localhost:3000/meals
+Content-Type: application/json
+
+{
+  "meal": {
+    "name": "Breakfast",
+    "meal_items_attributes": [
+      { "food_id": 1, "measure_id": 3, "quantity": 2 },
+      { "food_id": 2, "measure_id": 5, "quantity": 1.5 }
+    ]
+  }
+}
+
+###
+
+### UPDATE a meal + its meal_items
+PATCH http://localhost:3000/meals/1
+Content-Type: application/json
+
+{
+  "meal": {
+    "name": "Updated Breakfast",
+    "meal_items_attributes": [
+      { "id": 5, "quantity": 3 },          # update existing item
+      { "food_id": 3, "measure_id": 2, "quantity": 1 }  # add new item
+    ]
+  }
+}
+
+###
+
+### DELETE a meal
+DELETE http://localhost:3000/meals/1

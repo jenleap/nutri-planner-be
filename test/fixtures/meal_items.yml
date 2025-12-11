@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meal: one
+  food: one
+  measure: one
+  quantity: 9.99
+
+two:
+  meal: two
+  food: two
+  measure: two
+  quantity: 9.99

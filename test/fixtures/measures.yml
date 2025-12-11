@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  food: one
+  quantity: 9.99
+  unit: MyString
+  custom_unit: MyString
+  calories: 9.99
+  carbs: 9.99
+  protein: 9.99
+  fat: 9.99
+  fiber: 9.99
+
+two:
+  food: two
+  quantity: 9.99
+  unit: MyString
+  custom_unit: MyString
+  calories: 9.99
+  carbs: 9.99
+  protein: 9.99
+  fat: 9.99
+  fiber: 9.99

@@ -1,0 +1,55 @@
+### GET all foods (with measures)
+GET http://localhost:3000/foods
+Accept: application/json
+
+###
+
+### GET a single food
+GET http://localhost:3000/foods/1
+Accept: application/json
+
+###
+
+### CREATE a food with nested measures
+POST http://localhost:3000/foods
+Content-Type: application/json
+
+{
+  "food": {
+    "name": "egg",
+    "brand": "generic",
+    "measures_attributes": [
+        { 
+        "unit": "egg", 
+        "quantity": 1, 
+        "calories": 72,
+        "carbs": 0.5,
+        "fat": 4.8,
+        "protein": 6.3,
+        "fiber": 0
+        }
+    ]
+  }
+}
+
+###
+
+### UPDATE food + measures (Rails will accept create/update)
+PATCH http://localhost:3000/foods/1
+Content-Type: application/json
+
+{
+  "food": {
+    "name": "Oatmeal Updated",
+    "brand": "Quaker",
+    "measures": [
+      { "id": 5, "unit": "cup", "quantity": 1, "grams": 79 },
+      { "unit": "bag", "quantity": 1, "grams": 100 }
+    ]
+  }
+}
+
+###
+
+### DELETE a food
+DELETE http://localhost:3000/foods/1
